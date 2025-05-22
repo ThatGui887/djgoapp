@@ -14,8 +14,8 @@ def home(request):
 
     rooms = Room.objects.filter(
         Q(topic__name__icontains=q) |
-        Q(name_icontains=q) |
-        Q(description_icontains=q)
+        Q(name__icontains=q) |
+        Q(desc__icontains=q)
         )
 
     topics = Topic.objects.all()
