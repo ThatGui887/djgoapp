@@ -81,7 +81,7 @@ def updateRoom(request, pk):
     room = Room.objects.get(id=pk)
     form = RoomForm(instance=room)
 
-    if request.user != room.user:
+    if request.user != room.host:
         return HttpResponse('You need to be logged in to access this page!!')
 
     if request.method == "POST":
