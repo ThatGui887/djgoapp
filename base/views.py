@@ -90,7 +90,7 @@ def room(request, pk):
         return redirect('room', pk=room.id)
 
 
-    context = {'room': room, 'room_messages':room_messages, 'paticipants':participants}
+    context = {'room': room, 'room_messages':room_messages, 'participants':participants}
     return render(request, 'base/room.html', context)
 
 @login_required(login_url='login')
