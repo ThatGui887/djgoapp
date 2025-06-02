@@ -18,12 +18,13 @@
     {% endfor %}
 </div>
 
+{% if request.user.is_authenticated %}
 <div class="comment-form">
     <form method="POST" action="">
         {% scrf_token %}
         <input type="text" name="body" placeholder="Write your message here..."/>
     </form>
-
 </div>
+{% endif %}
 
 {% endblock %}
