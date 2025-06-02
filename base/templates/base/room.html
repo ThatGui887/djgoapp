@@ -13,6 +13,7 @@
     {% for messages in room_message %}
         <div>
             <small>@{{message.user}} {{message.created|timesince}} ago</small>
+            <p>{{message.body}}</p>
         </div>
     {% endfor %}
 </div>
